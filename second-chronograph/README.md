@@ -3,37 +3,23 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 ## Second Chronograph
 
 小功能 - 秒表，使用react实现。
+### 1、功能：
+ - 按下右侧“启动”按钮，这个按钮就会变成“停止”，同时上面的数字时钟开始计时；按下“停止”按钮，数字时钟停止计时。
+ - 左侧有一个按钮，初始状态显示“复位”，点击该铵钮会清空时钟； 开始计时之后，这个左侧按钮会变成“计次”，按一下“计次”，秒表底部就会增加一列时间，记录下按下“计次”这一瞬间的时刻。
 
-### `npm start`
-
-Runs the app in the development mode.<br>
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
-
-The page will reload if you make edits.<br>
-You will also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.<br>
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.<br>
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.<br>
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
+### 2、环境部署及应用启动
+ - 执行`npm run build` 部署环境
+ - 执行`npm start` 启动应用
+ 
+### 3、实现思路
+ - 上：标题栏（秒表）
+ - 中：两部分
+    - 计时模块：
+        - 时间展示
+        - 复位/计次按钮
+        - 启动/停止按钮
+    - 计次模块：
+        - 点击一次计次，计次数添加一次
+ - 底：导航栏（秒表&logo）
+ 
+ 
