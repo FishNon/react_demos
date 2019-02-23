@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="../build/react.development.js"></script>
+    <script src="../build/react-dom.development.js"></script>
+    <script src="../build/babel.min.js"></script>
+    <script src="../build/prop-types.js"></script>
+</head>
+<body>
+<div id="example"></div>
+<script type="text/babel">
+    class LikeButton extends React.Component {
+        constructor(props) {
+            super(props);
+            this.state = {
+                liked: false
+            };
+            this.handleClick = this.handleClick.bind(this);
+        }
+
+        handleClick(event) {
+            this.setState({
+                liked: !this.props.liked
+            })
+        }
+
+        render() {
+            var text = this.state.liked ? 'like' : 'haven\'t like';
+            return (
+                <div onClick={this.handleClick}>
+                    You {text} this.Click totggle.
+                </div>
+            );
+        }
+    }
+
+    ReactDOM.render(<LikeButton/>, document.getElementById("example"));
+</script>
+</body>
+</html>
