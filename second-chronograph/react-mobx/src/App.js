@@ -7,6 +7,7 @@ import seconds from './seconds.png';
 import Tool from './tools.js';
 
 // 创建SecHeader组件，即为秒表工具的顶部标题栏
+@observer
 class SecHeader extends React.Component {
     render() {
         return (

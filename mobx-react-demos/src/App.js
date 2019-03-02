@@ -1,28 +1,32 @@
-import React, { Component } from 'react';
+import React, {Component} from 'react';
+import {observable, action} from "mobx";
+import {observer} from "mobx-react";
 import logo from './logo.svg';
 import './App.css';
 
+var appState = observable({
+    timer: 0
+});
+
+appState.resetTimer = action(function reset() {
+    appState.timer = 0;
+});
+
+setInterval(action(function tick() {
+    appState.timer++;
+}),1000);
+
+@observer
 class App extends Component {
-  render() {
-    return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
-      </div>
-    );
-  }
+    render() {
+        return (
+            <button onClick={this.onReset.bind(this)}>Seconds passed : {this.props.appState.timer}</button>
+        );
+    }
+    onReset(){
+        this.props.appState.reserTimer();
+    }
 }
 
-export default App;
+
+export {App,appState};
